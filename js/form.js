@@ -22,6 +22,9 @@ botaoAdicionar.addEventListener("click", function (event) {
     tabela.appendChild(pacienteTr);
 
     form.reset();
+
+    var msgsErro = document.querySelector("#msg-erro");
+    msgsErro.innerHTML = "";
 })
 
 function obtemPacienteDoFormulario(form) {
@@ -55,7 +58,7 @@ function montaTr(paciente) {
 }
 
 function validaPaciente(paciente) {
-    var erros = []; 
+    var erros = [];
 
     if (paciente.nome.length == 0) {
         erros.push("Nome é obrigatório.");
